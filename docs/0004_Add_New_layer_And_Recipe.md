@@ -79,7 +79,7 @@
   ```
 * `rm imx6q-x11/conf/* -rf`
 * `MACHINE=imx6dlsabresd DISTRO=fsl-imx-x11 source ./fsl-setup-release.sh -b imx6q-x11`
-  ``` 
+  ```Shell
   zengjf@zengjf:~/fsl-release-bsp/imx6q-x11$ cat conf/bblayers.conf
   POKY_BBLAYERS_CONF_VERSION = "1"
   
@@ -109,11 +109,56 @@
   BBLAYERS += " ${BSPDIR}/sources/meta-openembedded/meta-filesystems "
   BBLAYERS += " ${BSPDIR}/sources/meta-qt5 "
   ```
+* 添加example进入文件系统：
+  * 暂时性使用修改`conf/local.conf`：
+    ```Shell
+    PACKAGECONFIG_append_pn-qemu-native = " sdl"
+    PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
+    CONF_VERSION = "1"
+    
+    DL_DIR ?= "${BSPDIR}/downloads/"
+    ACCEPT_FSL_EULA = "1"
+
+    IMAGE_INSTALL += "example"
+    ```
+  * 永久性使用修改`setup-environment`：
+    ```Shell
+    generated_config=
+    if [ ! -e conf/local.conf.sample ]; then
+        mv conf/local.conf conf/local.conf.sample
+    
+        # Generate the local.conf based on the Yocto defaults
+        TEMPLATES=$CWD/sources/base/conf
+        grep -v '^#\|^$' conf/local.conf.sample > conf/local.conf
+        cat >> conf/local.conf <<EOF
+    
+    DL_DIR ?= "\${BSPDIR}/downloads/"
+
+    IMAGE_INSTALL += "example"
+    EOF
+        # Change settings according environment
+        sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" \
+            -e "s,SDKMACHINE ??=.*,SDKMACHINE ??= '$SDKMACHINE',g" \
+            -e "s,DISTRO ?=.*,DISTRO ?= '$DISTRO',g" \
+            -i conf/local.conf
+    
+        cp $TEMPLATES/* conf/
+    
+        for s in $HOME/.oe $HOME/.yocto; do
+            if [ -e $s/site.conf ]; then
+                echo "Linking $s/site.conf to conf/site.conf"
+                ln -s $s/site.conf conf
+            fi
+        done
+    
+        generated_config=1
+    fi
+    ```
 * `bitbake example -g`
 * `bitbake example -c cleanall`
 * `bitbake example`
 * Compile Over Output:
-  ```
+  ```Shell
   zengjf@zengjf:~/fsl-release-bsp/imx6q-x11$ find * -iname helloworld | grep 'example/'
   tmp/work/cortexa9hf-neon-poky-linux-gnueabi/example/0.1-r0/package/usr/bin/helloworld
   tmp/work/cortexa9hf-neon-poky-linux-gnueabi/example/0.1-r0/package/usr/bin/.debug/helloworld
