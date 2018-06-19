@@ -1,6 +1,7 @@
 # Read Manual
 
-https://www.yoctoproject.org/docs/1.5.1/dev-manual/dev-manual.html
+* https://www.yoctoproject.org/docs/1.5.1/dev-manual/dev-manual.html
+* https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html
 
 ## Layer Configuration File
 

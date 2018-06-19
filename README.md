@@ -21,5 +21,6 @@
 
 ## Docs
 
+* [0003_Operation_bb_File.md](docs/0003_Operation_bb_File.md)
 * [0002_Read_Manual.md](docs/0002_Read_Manual.md)
 * [0001_fsl-setup-release_setup-environment.md](docs/0001_fsl-setup-release_setup-environment.md)

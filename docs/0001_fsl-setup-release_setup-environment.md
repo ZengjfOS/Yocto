@@ -5,7 +5,7 @@
 * `repo sync`
 * `MACHINE=imx6dlsabresd DISTRO=fsl-imx-x11 source ./fsl-setup-release.sh -b imx6q-x11`
 * `bitbake fsl-image-qt5`
-* outpu: `imx6q-x11/tmp/deploy/images/imx6dlsabresd`
+* output: `imx6q-x11/tmp/deploy/images/imx6dlsabresd`
 
 ## fsl-setup-release setup-environment relationship
 
