@@ -21,6 +21,7 @@
 
 ## Docs
 
+* [0006_MFGTool_U-Boot_In_Yocto_Receipe.md](docs/0006_MFGTool_U-Boot_In_Yocto_Receipe.md)
 * [0005_Repo_Default_Config.md](docs/0005_Repo_Default_Config.md)
 * [0004_Add_New_layer_And_Recipe.md](docs/0004_Add_New_layer_And_Recipe.md)
 * [0003_Operation_bb_File.md](docs/0003_Operation_bb_File.md)
