@@ -21,6 +21,7 @@
 
 ## Docs
 
+* [0008_Yocto_Toolchain.md](docs/0008_Yocto_Toolchain.md)
 * [0007_MFGTool_initramfs_Boot_Root_Filesystem.md](docs/0007_MFGTool_initramfs_Boot_Root_Filesystem.md)
 * [0006_MFGTool_U-Boot_In_Yocto_Receipe.md](docs/0006_MFGTool_U-Boot_In_Yocto_Receipe.md)
 * [0005_Repo_Default_Config.md](docs/0005_Repo_Default_Config.md)
