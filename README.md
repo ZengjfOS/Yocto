@@ -21,6 +21,7 @@
 
 ## Docs
 
+* [0014_run_do_function.md](docs/0014_run_do_function.md)
 * [0013_u-boot_generate.md](docs/0013_u-boot_generate.md)
 * [0012_boot-img_generate.md](docs/0012_boot-img_generate.md)
 * [0011_bitbake_variable_override.md](docs/0011_bitbake_variable_override.md)
