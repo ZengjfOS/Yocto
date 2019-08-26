@@ -160,8 +160,8 @@ IMAGE_INSTALL += "tunctl"
 IMAGE_INSTALL_append += " opencv wget"
 IMAGE_INSTALL_append += " sshd roslaunch rostopic roscpp-dev std-msgs-dev"
 IMAGE_INSTALL_append += " libuv sophus"
-PACKAGECONFIG_append_pn-opencv_mx8 = " dnn opencl python2 qt5"
-PACKAGECONFIG_remove_pn-opencv_mx8 = " python3"
+PACKAGECONFIG_append_pn-opencv_mx8 += " dnn opencl python2 qt5"
+PACKAGECONFIG_remove_pn-opencv_mx8 += " python3"
 EOF
     # Change settings according environment
     sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" \
