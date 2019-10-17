@@ -21,6 +21,7 @@
 
 ## Docs
 
+* [0017_ATF_SCFW_M4.md](docs/0017_ATF_SCFW_M4.md)
 * [0016_rootfs_add_gcc_g++.md](docs/0016_rootfs_add_gcc_g++.md)
 * [0015_copy_file_to_rootfs.md](docs/0015_copy_file_to_rootfs.md)
 * [0014_run_do_function.md](docs/0014_run_do_function.md)

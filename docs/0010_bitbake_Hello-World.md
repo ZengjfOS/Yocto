@@ -196,6 +196,7 @@
   * `bitbake helloworld -DD -c compile`
   * `bitbake helloworld -DD -c install`
   * `bitbake helloworld -DD -c deploy`
+* `tmp/work/aarch64-poky-linux/helloworld/0.1+gitAUTOINC+8892d68557-r0`
 * `imx8-build-wayland/conf/local.conf`中添加`helloworld`
 * `bitbake fsl-image-qt5-validation-imx`
 * `imx8-build-wayland/tmp/work/imx8qmmek-poky-linux/fsl-image-qt5-validation-imx/1.0-r0/rootfs/usr/bin/hello`
